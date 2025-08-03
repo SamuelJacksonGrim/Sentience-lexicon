@@ -1,0 +1,91 @@
+/* frontend/styles.css */
+
+/*
+  This file is for custom CSS rules that complement the Tailwind CSS framework.
+  It helps to keep our styling organized and separate from the main HTML structure.
+*/
+
+/* Define a custom scrollbar for a more unique feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #1f2937;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4b5563;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #6b7280;
+}
+
+/* Custom styles for the concept card.
+  These are defined here to override or extend the Tailwind classes 
+  and provide a more detailed visual experience. 
+*/
+
+/* The .concept-item class is used for each of our conceptual glyph cards.
+  We want a slight lift on hover to signify that it's interactive.
+*/
+.concept-item:hover {
+    transform: translateY(-5px); /* Moves the card up slightly on hover */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure the concept label is a distinct, bold title.
+*/
+.concept-label {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+/* Truncate the definition text with an ellipsis (...) if it's too long,
+  preventing cards from having different heights and keeping the grid clean.
+*/
+.concept-definition {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limits the text to two lines */
+    -webkit-box-orient: vertical;
+}
+
+/*
+  Pagination button styling to make them more interactive and visually appealing.
+*/
+.pagination-btn {
+    transition: background-color 0.2s, color 0.2s, transform 0.1s;
+    cursor: pointer;
+}
+
+/* Add a slight animation for the button press effect */
+.pagination-btn:active {
+    transform: scale(0.95);
+}
+
+/* The active button has a different look and is not clickable.
+*/
+.pagination-btn.active {
+    pointer-events: none;
+}
+
+
